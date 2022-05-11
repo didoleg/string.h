@@ -1,0 +1,8 @@
+http://www.z-i-v.ru/articles/linux-error-codes.htm
+https://github.com/jkaivo/strerror/commit/f43c3e9e2d68f8a4229eee32146b7b85062fa8b9
+
+https://russianblogs.com/article/3913505164/
+
+Makefile
+https://guides.hexlet.io/ru/makefile-as-task-runner/
+https://habr.com/ru/post/211751/
