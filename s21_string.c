@@ -17,7 +17,7 @@ void *s21_memchr(const void *src, int c, size_t n) {
 
 int s21_memcmp(const void *str1, const void *str2, size_t n) {
     int state = 0;
-    while (n-- >0) {
+    while (n-- > 0) {
         if (*(unsigned char*)str1 - *(unsigned char*)str2 != 0) {
             state = 1;
             break;
@@ -30,9 +30,8 @@ int s21_memcmp(const void *str1, const void *str2, size_t n) {
 }
 
 void *s21_memcpy(void *dest, const void *src, size_t n) {
-
-        const unsigned char *str = (const unsigned char *)src;
-        unsigned char *str2 = (unsigned char *)dest;
+    const unsigned char *str = (const unsigned char *)src;
+    unsigned char *str2 = (unsigned char *)dest;
     if (src < dest) {
         str2 = str2 + n - 1;
         str = str +n - 1;
@@ -99,15 +98,17 @@ char *s21_strncat(char *dest, const char *src, size_t n) {
 }
 
 char *s21_strchr(const char *str, int c) {
-    char *find;
-    find = NULL;
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (str[i] == c) {
-            find = str + i;
+    const char *find = str;
+    while (find) {
+        if (*find == c) {
             break;
+        } else if (*find == 0) {
+            find = NULL;
+        } else {
+            ++find;
         }
     }
-    return find;
+    return (char*)find;
 }
 
 int s21_strncmp(const char *str1, const char *str2, size_t n) {
@@ -324,16 +325,13 @@ char *s21_strcpy(char *dest, const char *src) {
 
 char *s21_strpbrk(const char *str1, const char *str2) {
     char *find = NULL;
-    int state = 0;
     for (int i = 0; str1[i] != '\0'; i++) {
         for (int j = 0; str2[j] != '\0'; j++) {
             if (str2[j] == str1[i]) {
-                find = (char*)str1 + i;
-                state = 1;
+                find = (char *)str1 + i;
                 break;
             }
-        }
-        if (state == 1) {
+        } if (find) {
             break;
         }
     }
@@ -417,12 +415,41 @@ char *s21_strstr(const char *haystack, const char *needle) {
     return ret;
 }
 
-char *s21_strtok(char *str, const char *delim) {
-    char *find = NULL;
-    for (int i = 0; str[i] != '\0'; i++) {
-        if ((int)str[i] == *delim) {
-            find = str + i;
+static char *find_lexem_begin(char *str, const char *delim) {
+    char *lexem = NULL;
+    for (char *str_it = str; *str_it != 0; ++str_it) {
+        if (!s21_strchr(delim, *str_it)) {
+            lexem = str_it;
+            break;
         }
     }
-    return find;
+    return lexem;
+}
+
+static char *s21_str = NULL;
+
+char *s21_strtok(char *str, const char *delim) {
+    if (str) {
+        s21_str = str;
+    }
+
+    char *lexem_begin = NULL;
+    if (s21_str) {
+        lexem_begin = find_lexem_begin(s21_str, delim);
+        if (lexem_begin) {
+            char *lexem_end = s21_strpbrk(lexem_begin, delim);
+            if (lexem_end) {
+                *lexem_end = 0;
+                s21_str = lexem_end + 1;
+            }
+            else {
+                // The last lexem is found
+                s21_str = NULL;
+            }
+        } else {
+            // A new lexem not found
+            s21_str = NULL;
+        }
+    }
+    return lexem_begin;
 }

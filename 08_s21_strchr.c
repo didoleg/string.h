@@ -28,13 +28,15 @@ int main () {
 }
 
 char *s21_strchr(const char *str, int c) {
-    char *find;
-    find = NULL;
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (str[i] == c) {
-            find = str + i;
+    const char *find = str;
+    while (find) {
+        if (*find == c) {
             break;
+        } else if (*find == 0) {
+            find = NULL;
+        } else {
+            ++find;
         }
     }
-    return find;
+    return (char*)find;
 }
