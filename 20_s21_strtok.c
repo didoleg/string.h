@@ -6,8 +6,8 @@ char *s21_strchr(const char *str, int c);
 char *s21_strtok(char *str, const char *delim);
 
 int main() {
-    char str_2[] = ".p.l.";
-    char sep[] = "./";
+    char str_2[] = "test1/test2/test3/test4";
+    char sep[] = "/";
 
     char *test_strtok = s21_strtok(str_2, sep);
 
@@ -33,9 +33,10 @@ static char *find_lexem_begin(char *str, const char *delim) {
     return lexem;
 }
 
-static char *s21_str = NULL;
+
 
 char *s21_strtok(char *str, const char *delim) {
+    static char *s21_str = NULL;
     if (str) {
         s21_str = str;
     }

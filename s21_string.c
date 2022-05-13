@@ -426,9 +426,9 @@ static char *find_lexem_begin(char *str, const char *delim) {
     return lexem;
 }
 
-static char *s21_str = NULL;
-
 char *s21_strtok(char *str, const char *delim) {
+    static char *s21_str = NULL;
+    
     if (str) {
         s21_str = str;
     }
