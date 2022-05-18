@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-#include "s21_string.h"
-
 
 size_t s21_strlen(const char *str);
-char *s21_str_upper(const char *string);
-char *s21_str_lower(const char *string);
+char *s21_to_upper(const char *string);
+char *s21_to_lower(const char *string);
 char *s21_str_insert(char *str_1, char *str_2);
 
 int main() {
@@ -14,25 +12,15 @@ int main() {
     char str_2[13] = "HELLO, wOrLd";
     char str_3[13] = "new";
 
-    printf("%s\n", str_1);
-    printf("%s\n", str_2);
-    printf("up - %s\n", s21_str_upper(str_1));
-    printf("low - %s\n", s21_str_lower(str_2));
+    printf("str_1 - %s\n", str_1);
+    printf("str_2 - %s\n", str_2);
+    printf("up - %s\n", s21_to_upper(str_1));
+    printf("low - %s\n", s21_to_lower(str_2));
     printf("insert - %s\n", s21_str_insert(str_1, str_3));
     return 0;
 }
 
-size_t s21_strlen(const char *str) {
-    size_t ret = 0;
-    while (*str != '\0') {
-        str++;
-        ret++;
-    }
-    return ret;
-}
-
-
-char *s21_str_upper(const char *string) {
+char *s21_to_upper(const char *string) {
     size_t size = s21_strlen(string) + 1;
     char* up_str = malloc(size * sizeof(char));
     if (up_str) {
@@ -47,7 +35,7 @@ char *s21_str_upper(const char *string) {
     return up_str;
 }
 
-char *s21_str_lower(const char *string) {
+char *s21_to_lower(const char *string) {
     size_t size = s21_strlen(string) + 1;
     char* str_lower = malloc(size * sizeof(char));
     if (str_lower) {
@@ -64,26 +52,30 @@ char *s21_str_lower(const char *string) {
 
 char *s21_str_insert(char *str_1, char *str_2) {
     size_t midle = s21_strlen(str_1) / 2;
-    char *tmp;
-    size_t j = 0;
+    size_t size_new_str = s21_strlen(str_1) + s21_strlen(str_1) + 1;
+    char *new_str = malloc(size_new_str * sizeof(char));
     
-    for (size_t i = midle; str_1[i] != '\0'; i++) {
-        tmp[j] = str_1[i];
-        j++; 
+    for (size_t i = 0; i < size_new_str; i++) {
+        if (i < midle) {
+            new_str[i] = str_1[i];
+        } else if (i == midle) {
+            for (size_t j = 0; str_2[j] != '\0'; i++) {
+                new_str[midle] = str_2[j];
+                midle++;
+            }
+        } else {
+            new_str[i] = str_1[i];
+        }
     }
-    
-    tmp[j] = '\0';
+    new_str[size_new_str] = '\0';
+    return new_str;
+}
 
-    for (size_t i = 0; str_2[i] != '\0'; i++) {
-        str_1[midle] = str_2[i];
-        midle++;
+size_t s21_strlen(const char *str) {
+    size_t ret = 0;
+    while (*str != '\0') {
+        str++;
+        ret++;
     }
-
-    for (j = 0; tmp[j] != '\0'; j++) {
-        str_1[midle] = tmp[j];
-        midle++;
-    }
-    str_1[midle] = '\0';
-    
-    return str_1;
+    return ret;
 }

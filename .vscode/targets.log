@@ -8,7 +8,7 @@ This program is built by Equation Solution <http://www.Equation.com>.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon May 16 15:06:20 2022
+# Make data base, printed on Wed May 18 17:26:44 2022
 
 # Variables
 
@@ -25,7 +25,7 @@ VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
 # environment
 LOCALAPPDATA = C:\Users\sad\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-6f07f37c-cc91-4c45-9a5a-6111d31b2413-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-5474e8f9-8263-45ac-b363-b36791d45aa0-sock
 # environment
 VSCODE_CWD = C:\Users\sad\AppData\Local\Programs\Microsoft VS Code
 # environment
@@ -39,7 +39,7 @@ MAKE_COMMAND := make.exe
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_5944_CQFGVGVNBUZNCBDN
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_13864_NZNAYIQHRPIHSNEA
 # environment
 VS160COMCOMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\
 # environment
@@ -95,7 +95,7 @@ PT8HOME = C:\Program Files\Cisco Packet Tracer 8.0
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 5944
+VSCODE_PID = 13864
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # automatic
@@ -217,9 +217,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 9, GenuineIntel
 
 # Directories
 
-# . (key d:/_�����/21 School/string.h, mtime 1652441177): 9 files, no impossibilities.
+# . (key d:/_�����/21 School/string.h, mtime 1652862064): 16 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 16 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -255,12 +255,12 @@ Makefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 12 / storage = 88 B / avg = 7 B
-# current buf: size = 8162 B / used = 88 B / count = 12 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 19 / storage = 170 B / avg = 8 B
+# current buf: size = 8162 B / used = 170 B / count = 19 / avg = 8 B
 
-# strcache performance: lookups = 15 / hit rate = 20%
+# strcache performance: lookups = 22 / hit rate = 13%
 # hash-table stats:
-# Load=12/8192=0%, Rehash=0, Collisions=1/15=7%
-# Finished Make data base on Mon May 16 15:06:20 2022
+# Load=19/8192=0%, Rehash=0, Collisions=1/22=5%
+# Finished Make data base on Wed May 18 17:26:44 2022
 
  

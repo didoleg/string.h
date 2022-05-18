@@ -21,7 +21,8 @@ char *s21_strrchr(const char *str, int c);
 size_t s21_strspn(const char *str1, const char *str2);
 char *s21_strstr(const char *haystack, const char *needle);
 char *s21_strtok(char *str, const char *delim);
-char *s21_str_upper(const char *string);
-char *s21_str_lower(const char *string);
+char *s21_to_upper(const char *string);
+char *s21_to_lower(const char *string);
+char *s21_str_insert(char *str_1, char *str_2);
 
 #endif

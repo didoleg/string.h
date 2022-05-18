@@ -454,7 +454,7 @@ char *s21_strtok(char *str, const char *delim) {
     return lexem_begin;
 }
 
-char *s21_str_upper(const char *string) {
+char *s21_to_upper(const char *string) {
     size_t size = s21_strlen(string) + 1;
     char* up_str = malloc(size * sizeof(char));
     if (up_str) {
@@ -469,7 +469,7 @@ char *s21_str_upper(const char *string) {
     return up_str;
 }
 
-char *s21_str_lower(const char *string) {
+char *s21_to_lower(const char *string) {
     size_t size = s21_strlen(string) + 1;
     char* str_lower = malloc(size * sizeof(char));
     if (str_lower) {
@@ -482,4 +482,27 @@ char *s21_str_lower(const char *string) {
         }
     }
     return str_lower;
+}
+
+char *s21_str_insert(char *str_1, char *str_2) {
+    size_t midle = s21_strlen(str_1) / 2;
+    size_t size_new_str = s21_strlen(str_1) + s21_strlen(str_1) + 1;
+    char *new_str = malloc(size_new_str * sizeof(char));
+    size_t it_str = midle;
+    for (size_t i = 0; i < size_new_str; i++) {
+        if (i < midle) {
+            new_str[i] = str_1[i];
+        } else if (i == midle) {
+            for (size_t j = 0; str_2[j] != '\0'; j++) {
+                new_str[it_str] = str_2[j];
+                it_str++;
+            }
+            new_str[it_str] = str_1[i];
+        } else {
+            it_str++;
+            new_str[it_str] = str_1[i];
+        }
+    }
+    new_str[size_new_str] = '\0';
+    return new_str;
 }
