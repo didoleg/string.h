@@ -453,3 +453,33 @@ char *s21_strtok(char *str, const char *delim) {
     }
     return lexem_begin;
 }
+
+char *s21_str_upper(const char *string) {
+    size_t size = s21_strlen(string) + 1;
+    char* up_str = malloc(size * sizeof(char));
+    if (up_str) {
+        for (size_t i = 0; i < size; i++) {
+            if (string[i] >= 'a' && string[i] <= 'z') {
+                up_str[i] = string[i] - 32;
+    	    } else {
+                up_str[i] = string[i];
+            }
+        }
+    }
+    return up_str;
+}
+
+char *s21_str_lower(const char *string) {
+    size_t size = s21_strlen(string) + 1;
+    char* str_lower = malloc(size * sizeof(char));
+    if (str_lower) {
+        for (size_t i = 0; i < size; i++) {
+            if (string[i] >= 'A' && string[i] <= 'Z') {
+                str_lower[i] = string[i] + 32;
+    	    } else {
+                str_lower[i] = string[i];
+            }
+        }
+    }
+    return str_lower;
+}

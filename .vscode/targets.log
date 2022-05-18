@@ -8,10 +8,12 @@ This program is built by Equation Solution <http://www.Equation.com>.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed May 11 16:58:35 2022
+# Make data base, printed on Mon May 16 15:06:20 2022
 
 # Variables
 
+# environment
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
 SYSTEMDRIVE = C:
 # environment
@@ -23,7 +25,7 @@ VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
 # environment
 LOCALAPPDATA = C:\Users\sad\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-c97fa726-1145-4114-9633-23129677f723-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-6f07f37c-cc91-4c45-9a5a-6111d31b2413-sock
 # environment
 VSCODE_CWD = C:\Users\sad\AppData\Local\Programs\Microsoft VS Code
 # environment
@@ -37,9 +39,11 @@ MAKE_COMMAND := make.exe
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_15932_TNUYUMGKXSGGBELI
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_5944_CQFGVGVNBUZNCBDN
 # environment
 VS160COMCOMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\
+# environment
+FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -91,7 +95,7 @@ PT8HOME = C:\Program Files\Cisco Packet Tracer 8.0
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 15932
+VSCODE_PID = 5944
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # automatic
@@ -158,8 +162,6 @@ USERDOMAIN = HELLS
 GNUMAKEFLAGS := 
 # environment
 OS = Windows_NT
-# environment
-__COMPAT_LAYER = DetectorsAppHealth
 # makefile
 .DEFAULT_GOAL := 
 # default
@@ -207,7 +209,7 @@ PROCESSOR_REVISION = 9e09
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 9, GenuineIntel
 # variable set hash-table stats:
-# Load=97/1024=9%, Rehash=0, Collisions=8/122=7%
+# Load=98/1024=10%, Rehash=0, Collisions=9/123=7%
 
 # Pattern-specific Variable Values
 
@@ -215,9 +217,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 9, GenuineIntel
 
 # Directories
 
-# . (key d:/_�����/21 School/string.h, mtime 1652263114): 19 files, no impossibilities.
+# . (key d:/_�����/21 School/string.h, mtime 1652441177): 9 files, no impossibilities.
 
-# 19 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -241,7 +243,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-11 16:58:25
+#  Last modified 2022-05-10 11:35:16
 #  File has been updated.
 #  Successfully updated.
 
@@ -253,12 +255,12 @@ Makefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 22 / storage = 267 B / avg = 12 B
-# current buf: size = 8162 B / used = 267 B / count = 22 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 12 / storage = 88 B / avg = 7 B
+# current buf: size = 8162 B / used = 88 B / count = 12 / avg = 7 B
 
-# strcache performance: lookups = 25 / hit rate = 12%
+# strcache performance: lookups = 15 / hit rate = 20%
 # hash-table stats:
-# Load=22/8192=0%, Rehash=0, Collisions=1/25=4%
-# Finished Make data base on Wed May 11 16:58:35 2022
+# Load=12/8192=0%, Rehash=0, Collisions=1/15=7%
+# Finished Make data base on Mon May 16 15:06:20 2022
 
  
